@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,700;1,300;1,500&display=swap');
 
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: sans-serif;
+  font-family: 'Chakra Petch', sans-serif;
   border: none;
   outline: none;
   scroll-behavior: smooth;
-
+  font-weight: 700;
 }
 :root{
   --bg-color: #fdfdfd;
@@ -29,6 +31,10 @@ html{
 body{
   background: var(--bg-color);
   color: var(--text-color);
+}
+b {
+  font-size: 17px;
+  color: var(--text-color)
 }
 .header{
   position: fixed;
@@ -252,9 +258,18 @@ section{
   width: 70%;
   pointer-events: none;
 }
-span{
+
+.about-MrxDragon .heading-MrxDragon span{
   color: var(--white-color);
 }
+
+.services-MrxDragon .heading-MrxDragon span,
+.portfolio-MrxDragon .heading-MrxDragon span,
+.testimonial-container-MrxDragon .heading-MrxDragon span,
+.contact-MrxDragon .heading-MrxDragon span{
+  color: var(--main-color);
+}
+
 .about-MrxDragon{
   display: flex;
   justify-content: center;
@@ -280,14 +295,16 @@ span{
 .about-content-MrxDragon p{
   font-size: 1.6rem;
   margin: 2rem 0 3rem;
+
 }
-.services{
+.services-MrxDragon{
   min-height: auto;
   padding-bottom: 7rem;
 }
 .services-MrxDragon h2{
   margin-bottom: 5rem;
 }
+
 .services-MrxDragon .services-container-MrxDragon{
   display: flex;
   justify-content: center;
@@ -296,7 +313,7 @@ span{
   gap: 2rem;
 }
 
-.services-container-MrxDragon .services-box-MrxDragon{
+.services-container-MrxDragon article{
   flex: 1 1 30rem;
   background: var(--bg-color);
   padding: 3rem 2rem 4rem;
@@ -307,21 +324,27 @@ span{
   border-bottom: .6rem solid var(--main-color);
   transition: .5s ease;
 }
-.services-container-MrxDragon .services-box-MrxDragon:hover{
+.services-container-MrxDragon article:hover{
   box-shadow: 0 .1rem 2rem var(--shadow-color);
   transform: scale(1.02);
 }
-.services-box-MrxDragon i{
+article i{
   font-size: 7rem;
   color: var(--main-color);
 }
-.services-box-MrxDragon h3{
+article h3{
   font-size: 2.6rem;
 }
-.services-box-MrxDragon p{
+article p{
   font-size: 1.6rem;
   margin: 1rem 0 3rem;
 }
+
+.services-MrxDragon .services-container-MrxDragon article .read-more-cont{
+  display: none;
+}
+
+
 .portfolio-MrxDragon{
   padding-bottom: 10rem;
 }
@@ -516,6 +539,98 @@ span{
   color: #333;
 }
 
+.popup-box{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top:0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 500;
+	visibility: hidden;
+	opacity:0;
+	transition: all 0.5s ease-in-out;
+}
+.popup-box.open{
+  visibility: visible;
+	opacity:1;
+}
+.popup-box .popup-content{
+	background-color: #ffffff;
+	width: 900px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 8px;
+  text-align: justify;
+}
+
+.popup-box .popup-header{
+	padding: 15px 40px 15px 15px;
+	border-bottom: 1px solid #dddddd;
+}
+.popup-box .popup-header h3{
+	margin:0;
+	color:var(--main-color);
+	font-size: 34px;
+}
+.popup-box .popup-header .popup-close-icon{
+	position: absolute;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    color: #555555;
+    font-size: 28px;
+    line-height: 30px;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+.popup-box .popup-body{
+	padding: 20px;
+	max-height: 500px;
+	overflow-y: auto;
+  display: grid;
+  align-items: center;
+}
+.popup-box .popup-body i{
+  font-size: 24rem;
+  color: var(--main-color);
+  border: .4rem solid var(--main-color);
+  border-radius: 30%;
+  position: absolute;
+  opacity: .2;
+  z-index: -99;
+  left: 50%;
+  margin-left: -130px;
+  top: 50%;
+  margin-top: -130px;
+}
+.popup-box .popup-body p{
+	font-size: 16px;
+  padding-top: 10px;
+	color:#555555;
+	margin:0 0 15px;
+}
+.popup-box .popup-footer{
+	padding: 15px;
+	border-top:1px solid #dddddd;
+	text-align: right;
+}
+.popup-box .popup-footer .btn{
+	padding: 8px 15px;
+	border:1px solid #555555;
+	color:#555555;
+	font-size: 16px;
+	background-color: transparent;
+	cursor: pointer;
+	border-radius: 4px;
+}
+.popup-box .popup-footer .btn:focus{
+	outline: none;
+}
+
 /* BREAKPOINTS */
 @media (max-width: 1200px) {
   html {
@@ -549,6 +664,18 @@ span{
   }
 }
 
+@media (min-height: 820px) {
+  .navbar-MrxDragon a, .navbar-MrxDragon i {
+    color: var(--main-color);
+  }
+  #darkMode-icon{
+    color: var(--main-color);
+  }
+  .navbar-MrxDragon a.active::before{
+    background: var(--main-color)
+  }
+}
+
 @media (max-width: 991px) {
   .navbar-MrxDragon a:nth-child(1),
   .navbar-MrxDragon a:nth-child(2) {
@@ -571,6 +698,19 @@ span{
   .portfolio-MrxDragon {
     padding-bottom: 7rem;
   }
+
+  .services-MrxDragon article .read-more-cont{
+    flex:0 0 100%;
+    max-width: 100%;
+    margin-top: 10%;
+   }
+   .popup-box .popup-content{
+     width: calc(100% - 30px);
+   }
+   .popup-box .popup-body i{
+     margin-left: -100px;
+     margin-top: -100px;
+   }
   .contact-MrxDragon{
     min-height: auto;
   }
@@ -698,6 +838,7 @@ span{
   .portfolio-MrxDragon h2 {
     margin-bottom: 3rem;
   }
+
   .portfolio-MrxDragon .portfolio-container-MrxDragon{
     grid-template-columns: repeat(2, 1fr);
   }
