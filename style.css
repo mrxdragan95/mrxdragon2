@@ -185,23 +185,20 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: professionRotate-MrxDragon 13s ease-out infinite;
+  animation: professionRotate-MrxDragon 10s ease-out infinite;
 }
 @keyframes professionRotate-MrxDragon{
-  0%,20% {
+  0%, 25% {
     transform: rotate(0deg);
   }
-  25%,45% {
-    transform: rotate(-90deg);
+  33.33%, 58.33% {
+    transform: rotate(120deg);
   }
-  50%,70% {
-    transform: rotate(-180deg);
-  }
-  75%,95% {
-    transform: rotate(-270deg);
+  66.66%, 91.66% {
+    transform: rotate(240deg);
   }
   100% {
-    transform: rotate(-360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -212,7 +209,7 @@ section{
   align-items: center;
   flex-direction: column;
   color: var(--main-color);
-  transform: rotate(calc(360deg / 4 * var(--i)));
+  transform: rotate(calc(360deg / 3 * var(--i)));
   transform-origin: 384px;
   background: var(--bg-color);
   padding: 13px 0;
@@ -221,7 +218,7 @@ section{
   margin-right: 15px;
 }
 .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(2),
-.home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(4) {
+.home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(3) {
   padding-bottom: 20px;
 
 }
@@ -251,13 +248,87 @@ section{
   border-bottom: 384px solid var(--main-color);
   border-left: 384px solid transparent;
 }
-.home-MrxDragon-img img{
+.home-MrxDragon-img-left img{
   position: relative;
   top: 0;
   right: 0;
   width: 70%;
   pointer-events: none;
 }
+
+.home-MrxDragon-img-right {
+  top: 24%;
+  right: 0;
+  min-height: 48%;
+  width: 550px;
+  position: absolute;
+}
+
+
+.slideshow-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slideshow-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  animation: fade 10s infinite;
+}
+
+.slideshow-container img:first-child {
+  opacity: 1;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  8% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.slideshow-container img:nth-child(1) {
+  animation: fade 10s infinite;
+}
+
+.slideshow-container img:nth-child(2) {
+  animation: fade 10s infinite 3.33s;
+}
+
+.slideshow-container img:nth-child(3) {
+  animation: fade 10s infinite 6.66s;
+}
+
 
 .about-MrxDragon .heading-MrxDragon span{
   color: var(--white-color);
@@ -540,57 +611,57 @@ article p{
 }
 
 .popup-box{
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	left: 0;
-	top:0;
-	background-color: rgba(0,0,0,0.5);
-	z-index: 500;
-	visibility: hidden;
-	opacity:0;
-	transition: all 0.5s ease-in-out;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top:0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 500;
+  visibility: hidden;
+  opacity:0;
+  transition: all 0.5s ease-in-out;
 }
 .popup-box.open{
   visibility: visible;
-	opacity:1;
+  opacity:1;
 }
 .popup-box .popup-content{
-	background-color: #ffffff;
-	width: 900px;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%,-50%);
-	border-radius: 8px;
+  background-color: #ffffff;
+  width: 900px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 8px;
   text-align: justify;
 }
 
 .popup-box .popup-header{
-	padding: 15px 40px 15px 15px;
-	border-bottom: 1px solid #dddddd;
+  padding: 15px 40px 15px 15px;
+  border-bottom: 1px solid #dddddd;
 }
 .popup-box .popup-header h3{
-	margin:0;
-	color:var(--main-color);
-	font-size: 34px;
+  margin:0;
+  color:var(--main-color);
+  font-size: 34px;
 }
 .popup-box .popup-header .popup-close-icon{
-	position: absolute;
-    height: 30px;
-    width: 30px;
-    text-align: center;
-    color: #555555;
-    font-size: 28px;
-    line-height: 30px;
-    right: 5px;
-    top: 5px;
-    cursor: pointer;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  color: #555555;
+  font-size: 28px;
+  line-height: 30px;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
 }
 .popup-box .popup-body{
-	padding: 20px;
-	max-height: 500px;
-	overflow-y: auto;
+  padding: 20px;
+  max-height: 500px;
+  overflow-y: auto;
   display: grid;
   align-items: center;
 }
@@ -608,33 +679,36 @@ article p{
   margin-top: -130px;
 }
 .popup-box .popup-body p{
-	font-size: 16px;
+  font-size: 16px;
   padding-top: 10px;
-	color:#555555;
-	margin:0 0 15px;
+  color:#555555;
+  margin:0 0 15px;
 }
 .popup-box .popup-footer{
-	padding: 15px;
-	border-top:1px solid #dddddd;
-	text-align: right;
+  padding: 15px;
+  border-top:1px solid #dddddd;
+  text-align: right;
 }
 .popup-box .popup-footer .btn{
-	padding: 8px 15px;
-	border:1px solid #555555;
-	color:#555555;
-	font-size: 16px;
-	background-color: transparent;
-	cursor: pointer;
-	border-radius: 4px;
+  padding: 8px 15px;
+  border:1px solid #555555;
+  color:#555555;
+  font-size: 16px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
 }
 .popup-box .popup-footer .btn:focus{
-	outline: none;
+  outline: none;
 }
 
 /* BREAKPOINTS */
 @media (max-width: 1200px) {
   html {
-      font-size: 55%;
+    font-size: 55%;
+  }
+  .home-MrxDragon-img-right {
+    width: 500px;
   }
 
   .home-MrxDragon .profession-container-MrxDragon {
@@ -655,6 +729,9 @@ article p{
   }
   section {
     padding: 10rem 3% 2rem;
+  }
+  .home-MrxDragon-img-right {
+    width: 400px;
   }
   .home-MrxDragon .profession-container-MrxDragon .profession-box-MrxDragon {
     right: -22rem;
@@ -694,6 +771,9 @@ article p{
   .home-MrxDragon .profession-container-MrxDragon .overlay {
     right: -39.5rem;
   }
+  .home-MrxDragon-img-right{
+    display: none;
+  }
   .services-MrxDragon,
   .portfolio-MrxDragon {
     padding-bottom: 7rem;
@@ -703,14 +783,14 @@ article p{
     flex:0 0 100%;
     max-width: 100%;
     margin-top: 10%;
-   }
-   .popup-box .popup-content{
-     width: calc(100% - 30px);
-   }
-   .popup-box .popup-body i{
-     margin-left: -100px;
-     margin-top: -100px;
-   }
+  }
+  .popup-box .popup-content{
+    width: calc(100% - 30px);
+  }
+  .popup-box .popup-body i{
+    margin-left: -100px;
+    margin-top: -100px;
+  }
   .contact-MrxDragon{
     min-height: auto;
   }
@@ -740,11 +820,9 @@ article p{
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     display: none;
   }
-.navbar-MrxDragon.active{
-  display: block;
+  .navbar-MrxDragon.active{
+    display: block;
   }
-
-
   .navbar-MrxDragon a {
     display: block;
     font-size: 2rem;
@@ -796,19 +874,17 @@ article p{
     transform-origin: 0;
   }
   .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(1) {
-    transform: rotate(-90deg) translate(-120px, -210px);
+    transform: rotate(0deg) translate(0, -335px);
   }
   .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(1) i {
     margin-right: 0;
   }
   .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(2) {
-    transform: rotate(0deg) translate(0, -335px);
+    transform: rotate(120deg) translate(-165px, -420px);
   }
+
   .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(3) {
-    transform: rotate(90deg) translate(-115px, -450px);
-  }
-  .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(4) {
-    transform: rotate(180deg) translate(-220px, -335px);
+    transform: rotate(240deg) translate(-160px, -235px);
   }
   .home-MrxDragon .profession-box-MrxDragon .circle {
     position: fixed;
@@ -872,16 +948,15 @@ article p{
     padding: 0 3% 30rem;
   }
   .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(1) {
-    transform: rotate(-90deg) translate(-110px, -220px);
+    transform: rotate(0deg) translate(0, -335px);
   }
+
   .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(2) {
-    transform: rotate(0deg) translate(5px, -335px);
+    transform: rotate(120deg) translate(-150px, -405px);
   }
+
   .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(3) {
-    transform: rotate(90deg) translate(-105px, -440px);
-  }
-  .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(4) {
-    transform: rotate(180deg) translate(-210px, -335px);
+    transform: rotate(240deg) translate(-150px, -240px);
   }
   .contact-MrxDragon form .input-box-MrxDragon input {
     width: 100%;
@@ -895,16 +970,13 @@ article p{
 
   }
   .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(1) {
-    transform: rotate(-90deg) translate(-105px, -220px);
+    transform: rotate(-120deg) translate(-145px, -250px);
   }
   .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(2) {
-    transform: rotate(0deg) translate(5px, -335px);
+    transform: rotate(0deg) translate(5px, -325px);
   }
   .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(3) {
-    transform: rotate(90deg) translate(-100px, -440px);
-  }
-  .home-MrxDragon .profession-box-MrxDragon .profession-MrxDragon:nth-child(4) {
-    transform: rotate(180deg) translate(-205px, -335px);
+    transform: rotate(120deg) translate(-140px, -410px);
   }
   .footer-MrxDragon {
     flex-direction: column-reverse;

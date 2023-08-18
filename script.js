@@ -70,7 +70,7 @@ ScrollReveal({
   delay: 200
 });
 ScrollReveal().reveal('.home-content-MrxDragon, .heading-MrxDragon', { origin: 'top'});
-ScrollReveal().reveal('.home-MrxDragon-img img, .about-content-MrxDragon, .services-container-MrxDragon, .portfolio-box-MrxDragon, .testimonial-content-MrxDragon, .contact-MrxDragon form', { origin: 'bottom'});
+ScrollReveal().reveal('.home-MrxDragon-img-left img, .about-content-MrxDragon, .services-container-MrxDragon, .portfolio-box-MrxDragon, .testimonial-content-MrxDragon, .contact-MrxDragon form', { origin: 'bottom'});
 ScrollReveal().reveal('.home-content-MrxDragon h1, .about-img-MrxDragon img', { origin: 'left'});
 ScrollReveal().reveal('.home-content-MrxDragon h3, .home-content-MrxDragon p', { origin: 'right'});
 
