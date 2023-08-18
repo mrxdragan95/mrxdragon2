@@ -114,7 +114,13 @@ section{
 .home-MrxDragon .home-content-MrxDragon{
   max-width: 44rem;
 }
-
+.home-MrxDragon-img-left img{
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
+}
 .home-content-MrxDragon h3{
   font-size: 3.2rem;
   font-weight: 700;
@@ -138,9 +144,9 @@ section{
   border: .2rem solid var(--main-color);
   border-radius: 50%;
   box-shadow: 0 .2rem .5rem var(--shadow-color);
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--main-color);
-  margin: 2.5rem 1.5rem 3rem 0;
+  margin: 2.5rem 3.5rem 3rem 0;
   transition: .5s ease;
 }
 .home-content-MrxDragon .social-media a:hover{
@@ -248,14 +254,6 @@ section{
   border-bottom: 384px solid var(--main-color);
   border-left: 384px solid transparent;
 }
-.home-MrxDragon-img-left img{
-  position: relative;
-  top: 0;
-  right: 0;
-  width: 70%;
-  pointer-events: none;
-}
-
 .home-MrxDragon-img-right {
   top: 24%;
   right: 0;
@@ -701,7 +699,11 @@ article p{
 .popup-box .popup-footer .btn:focus{
   outline: none;
 }
-
+@media (max-width: 1260px) {
+  .home-MrxDragon-img-left img{
+  width: 80%;
+  }
+}
 /* BREAKPOINTS */
 @media (max-width: 1200px) {
   html {
@@ -764,6 +766,9 @@ article p{
   }
   .home .home-content-MrxDragon{
     max-width: 50rem;
+  }
+  .home-MrxDragon-img-left {
+    width: 500px;
   }
   .home-MrxDragon .profession-container-MrxDragon .profession-box-MrxDragon {
     right: -45rem;
@@ -843,6 +848,9 @@ article p{
     padding: 0 3% 23rem;
     justify-content: center;
     text-align: center;
+  }
+  .home-MrxDragon-img-left {
+    width: 300px;
   }
   .home-MrxDragon-img img {
     width: 45%;

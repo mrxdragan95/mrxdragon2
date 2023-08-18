@@ -55,11 +55,18 @@ var swiper = new Swiper(".mySwiper", {
 
 /*======== Dark Light mode ==============*/
 let darkModeIcon = document.querySelector('#darkMode-icon');
+let currentHour = new Date().getHours(); // Get the current hour (0-23)
 
 darkModeIcon.onclick = () => {
   darkModeIcon.classList.toggle('bx-sun');
   document.body.classList.toggle('dark-mode');
 };
+
+// Check if it's nighttime (for example, between 7pm and 6am)
+if (currentHour >= 19 || currentHour < 6) {
+  darkModeIcon.classList.add('bx-sun'); // Add sun icon
+  document.body.classList.add('dark-mode'); // Enable dark mode
+}
 
 /*======== ScrollReveal ==============*/
 
